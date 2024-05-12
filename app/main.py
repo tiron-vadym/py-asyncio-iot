@@ -48,6 +48,11 @@ async def main() -> None:
         )
     )
 
+    await run_parallel(
+        service.unregister_device(hue_light_id),
+        service.unregister_device(speaker_id),
+        service.unregister_device(toilet_id),
+    )
 
 if __name__ == "__main__":
     start = time.perf_counter()
